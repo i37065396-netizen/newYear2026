@@ -42,20 +42,6 @@
             font-size: 1.5rem;
         }
         
-        .vs-section {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 2rem;
-        }
-        
-        .vs-text {
-            font-size: 1.5rem;
-            font-weight: bold;
-        }
-        
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -76,10 +62,6 @@
             align-items: center;
             width: 100%;
             box-sizing: border-box;
-        }
-        
-        .item.large {
-            max-width: 100%;
         }
         
         .item a {
@@ -104,10 +86,6 @@
             border-radius: 8px;
         }
         
-        .item.large img {
-            max-width: 280px;
-        }
-        
         .item .label {
             font-size: 0.9rem;
             font-weight: 500;
@@ -123,15 +101,6 @@
             h1 {
                 font-size: 2rem;
                 margin-bottom: 2rem;
-            }
-            
-            .vs-section {
-                flex-direction: row;
-                gap: 2rem;
-            }
-            
-            .vs-text {
-                font-size: 2.2rem;
             }
             
             .grid {
@@ -158,22 +127,6 @@
     </style>
 </head>
 <body>
-    <section class="vs-section">
-        <div class="item large">
-            <div class="label" style="font-size:1.2rem;font-weight:bold;">GTP 5.2</div>
-            <a href="#" data-img="tree_gpt-5_2.svg">
-                <img src="tree_gpt-5_2.svg" alt="Tree_GPT-5_2">
-            </a>
-        </div>
-        <div class="vs-text">VS</div>
-        <div class="item large">
-            <div class="label" style="font-size:1.2rem;font-weight:bold;">Grok Code Fast</div>
-            <a href="#" data-img="tree_grok-code-fast.svg">
-                <img src="tree_grok-code-fast.svg" alt="Tree_Grok-Code-Fast">
-            </a>
-        </div>
-    </section>
-    <h1>All Tree Models</h1>
     <div class="grid">
         <div class="item">
             <div class="label">GTP 5.2</div>
