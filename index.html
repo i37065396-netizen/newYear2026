@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Tree Models</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <style>
         /* Modal styles */
         .modal-overlay {
@@ -29,33 +30,86 @@
         
         body {
             font-family: Arial, sans-serif;
-            background: #f8f8f8;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             margin: 0;
-            padding: 1rem;
+            padding: 0.5rem;
             max-width: 100%;
             overflow-x: hidden;
+            min-height: 100vh;
         }
         
         h1 {
             text-align: center;
-            margin-bottom: 1.5rem;
-            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            margin-top: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .new-year-header {
+            text-align: center;
+            margin-bottom: 1rem;
+            padding: 1.5rem 1rem;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-in;
+        }
+
+        .new-year-title {
+            color: #fff;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 0 0 0.5rem 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        .new-year-subtitle {
+            color: rgba(255, 255, 255, 0.95);
+            font-size: 1rem;
+            margin: 0;
+            font-weight: 400;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3),
+                             0 0 10px rgba(255, 215, 0, 0.5);
+            }
+            to {
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3),
+                             0 0 20px rgba(255, 215, 0, 0.8),
+                             0 0 30px rgba(255, 215, 0, 0.6);
+            }
         }
         
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.4rem;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 0.5rem;
+            padding: 0 0.25rem;
         }
         
         .item {
             background: #fff;
-            border-radius: 12px;
+            border-radius: 8px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.07);
-            padding: 0.5rem;
+            padding: 0.25rem;
             text-align: center;
             display: flex;
             flex-direction: column;
@@ -66,7 +120,7 @@
         
         .item a {
             display: block;
-            border-radius: 8px;
+            border-radius: 6px;
             transition: box-shadow 0.2s;
             width: 100%;
         }
@@ -77,25 +131,37 @@
         
         .item img {
             width: 100%;
-            max-width: 240px;
             height: auto;
-            aspect-ratio: 1;
             object-fit: contain;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.25rem;
             background: #f0f0f0;
-            border-radius: 8px;
+            border-radius: 6px;
         }
         
         .item .label {
-            font-size: 0.9rem;
+            font-size: 0.65rem;
             font-weight: 500;
-            margin-bottom: 0.2rem;
+            margin-bottom: 0.1rem;
+            line-height: 1.2;
         }
         
         /* Tablet */
         @media (min-width: 600px) {
             body {
                 padding: 1.5rem;
+            }
+
+            .new-year-header {
+                padding: 2rem 1.5rem;
+                margin-bottom: 2rem;
+            }
+
+            .new-year-title {
+                font-size: 2.5rem;
+            }
+
+            .new-year-subtitle {
+                font-size: 1.3rem;
             }
             
             h1 {
@@ -104,12 +170,27 @@
             }
             
             .grid {
-                grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-                gap: 1rem;
+                gap: 0.75rem;
+                padding: 0 0.5rem;
+            }
+            
+            .item {
+                border-radius: 10px;
+                padding: 0.4rem;
+            }
+            
+            .item a {
+                border-radius: 8px;
+            }
+            
+            .item img {
+                margin-bottom: 0.4rem;
+                border-radius: 8px;
             }
             
             .item .label {
-                font-size: 1rem;
+                font-size: 0.9rem;
+                margin-bottom: 0.15rem;
             }
         }
         
@@ -118,15 +199,47 @@
             body {
                 padding: 2rem;
             }
+
+            .new-year-header {
+                padding: 2.5rem 2rem;
+                margin-bottom: 2.5rem;
+            }
+
+            .new-year-title {
+                font-size: 3rem;
+            }
+
+            .new-year-subtitle {
+                font-size: 1.5rem;
+            }
             
             .grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 0.67rem;
+                gap: 1rem;
+                padding: 0 0.5rem;
+            }
+            
+            .item {
+                border-radius: 12px;
+                padding: 0.5rem;
+            }
+            
+            .item img {
+                margin-bottom: 0.5rem;
+            }
+            
+            .item .label {
+                font-size: 1rem;
+                margin-bottom: 0.2rem;
             }
         }
     </style>
 </head>
 <body>
+    <div class="new-year-header">
+        <h1 class="new-year-title">🎄 С Наступающим Новым Годом! 🎄</h1>
+        <p class="new-year-subtitle">Пусть новый год принесёт радость и новые достижения! ✨</p>
+    </div>
+    
     <div class="grid">
         <div class="item">
             <div class="label">GTP 5.2</div>
